@@ -38,4 +38,6 @@ jobs:
                 git config --local user.name "GitHub Actions Bot"
                 git add .
                 git commit -m "Apply code formatting"
+                # プッシュ前にリモートの変更をプルする
+                git pull origin HEAD --rebas
                 git push origin HEAD:${{ github.head_ref }} || echo "No changes to commit"
